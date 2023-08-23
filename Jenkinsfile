@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
                 sh './jenkins/scripts/deliver-for-development.sh'
-                input id: 'DEVELOPMENT', message: 'Finished using the web site? (Click "Proceed" to continue)'
+                input id: 'D', message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             }
             steps {
                 sh './jenkins/scripts/deploy-for-production.sh'
-                input id: 'PRODUCTION', message: 'Finished using the web site? (Click "Proceed" to continue)'
+                input id: 'P', message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sh './jenkins/scripts/kill.sh'
             }
         }
